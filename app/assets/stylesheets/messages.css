@@ -81,7 +81,7 @@
 .messages{
   height: calc(100vh - 100px - 90px);
   background-color: #fafafa;
-  padding-top: 46px 40px 0;
+  padding: 46px 40px 0;
   overflow: scroll;
 }
 
