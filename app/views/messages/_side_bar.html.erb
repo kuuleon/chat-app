@@ -4,19 +4,19 @@
     <!-- ユーザー名をクリックすると、usersコントローラーのeditアクションが実行され、編集ページに遷移 -->
   </div>
   <div class="create-room">
-    <a href="#">チャットを作成する</a>
+    <%= link_to "チャットを作成する", new_room_path %>
+    <!--チャットルーム新規作成画面へ遷移する-->
   </div>
 </div>
 
 <div class="rooms">
-  <div class="room">
-    <div class="room-name">
-      <a href="#">techroom1</a>
+  <% current_user.rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <a href="#"><%= room.name %></a>
+        <!--room.nameの「name」は、roomsテーブルのカラム名-->
+      </div>
     </div>
-  </div>
-  <div class="room">
-    <div class="room-name">
-      <a href="#">techroom2</a>
-    </div>
-  </div>
+  <% end %>
 </div>
+<!--チャットルームは複数作成出来るので、eachメソッドを使って全てのチャットルームに対し同じ処理を繰り返し実行-->
