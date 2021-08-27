@@ -1,5 +1,8 @@
 class RoomsController < ApplicationController
   
+  def index  
+  end
+
   def new #チャットルームの新規作成なのでnewアクションを定義
     @room = Room.new #form_withに渡す引数として、値が空のRoomインスタンスを@roomに代入
   end
@@ -15,7 +18,7 @@ class RoomsController < ApplicationController
  
 
   private
-  
+
   def room_params
     params.require(:room).permit(:name, user_ids: [])
     #配列に対して保存を許可したい場合は、キーに対し[]を値として記述
