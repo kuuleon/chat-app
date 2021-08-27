@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
   #ユーザー登録時に「name」を空欄にして登録しようとすると、エラーが発生
+
+  has_many :room_users
+  has_many :rooms, through: :room_users
+  
 end
